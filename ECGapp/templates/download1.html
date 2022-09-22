@@ -154,10 +154,14 @@
         <div id="menu-btn" class="fas fa-bars"></div>
 </header>
 
+
 <form>
          <button type="submit" formaction="http://localhost:5000/download" class="button-75">Download File</button>
       </form>
-<h3>Sample Output</h3>
+
+
+    <h3>Sample Output</h3>
+<section class="home" id="home">
 
 <div class="column" >
 
@@ -173,8 +177,9 @@
         <img src="{{url_for('static',filename ='graphs/'+result[3][0])}}",width="400" height="360">
     {% endfor %}
 </div>
-
+</section>
 <form>
+
          <button type="submit" formaction="http://localhost:5000/download" class="button-75">Download File</button>
       </form>
 </body>
