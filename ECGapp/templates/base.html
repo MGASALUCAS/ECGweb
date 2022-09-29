@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<!--Headers-->
+
+
+{% include 'header.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDIAC TEK</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+<!--    <link  href="{% static 'style.css' %}" rel="stylesheet">-->
+</head>
+
+
+    <!-- header section starts  -->
+<br/>
+<br/>
+
+
+
+
+<!--    <header class="header">-->
+<!--      <a href="#" class="logo d-flex align-items-center"><img src="{% static 'cardiactek.jpg' %}" height=100 width=100 alt=""><span>CARDIAC TEK</span></a>-->
+<!--        <a href="#" class="logo"> <i class="icon-unknown-alt.svg" src="{% static 'cardiactek.jpg' %}"></i> CARDIAC TEK </a>-->
+
+<!--        <nav class="navbar">-->
+<!--            <a href="{% url 'home' %}">HOME</a>-->
+<!--            <a href="{% url 'index' %}">UPLOAD</a>-->
+<!--            <a href="{% url 'download' %}">DOWNLOAD</a>-->
+<!--            <a href="{% url 'output' %}">OUTPUTS</a>-->
+<!--        </nav>-->
+
+<!--        <div id="menu-btn" class="fas fa-bars"></div>-->
+
+<!--    </header>-->
+
+<header class="app-header navbar">
+<a href="#" class="logo d-flex align-items-center"><img src="{% static 'cardiactek.jpg' %}" height=10 width=10 alt=""><span>CARDIAC TEK</span></a>
+
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">DASHBOARD TABLES</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+               aria-haspopup="true" aria-expanded="false">
+                {% if request.user.userprofile %}
+                <img src="{% static 'cardiactek.jpg' %}" class="img-avatar" alt="admin">
+                {% else %}
+                <img src="{% static 'cardiactek.jpg' %}" class="img-avatar" alt="Anynumos">
+                {% endif %}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span
+                        class="badge badge-info">42</span></a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="2"><i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-secondary">42</span></a>
+                <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {% block navbar %}
+    {% endblock %}
+
+</header>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<!--Navbar-->
+
+{% include 'sidebar.html' %}
+<div class="app-body">
+    <!--Sidebar-->
+
+
+    <!-- Main content -->
+    <main class="main">
+
+        <!-- Page contents -->
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        </div>
+    </main>
+
+
+
+</div>
+
+
+<!--JS-->
+{% include 'js.html' %}
+
+</body>
+</html>
