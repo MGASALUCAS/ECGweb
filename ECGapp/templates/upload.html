@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        background-color: white;
+        color: red;
+        border: 180px solid rgb(185, 194, 226);
+        border-width: 400px;
+    }
+
+    center{
+ margin: auto;
+  width: 50%;
+  padding: 250px;
+    }
+    img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+<body>
+<div class="center">
+    <img src="/static/cardiactek2.jpg" width="220" height="150>
+    <div>
+ <form action = "http://localhost:5000/uploader" method = "POST"
+         enctype = "multipart/form-data">
+
+         <input type = "file" name = "file" />
+    </div>
+
+         <input type = "submit"/>
+      </form>
+    </div>
+</body>
+</html>

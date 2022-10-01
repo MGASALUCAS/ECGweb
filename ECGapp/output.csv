@@ -1,0 +1,9 @@
+id,prediction,probability
+0, Unknown Beats,0.93
+1,Fusion Beats,0.61
+2,ecotic beats,0.81
+3, Unknown Beats,0.9
+4,Ventricular ectopic beats,0.81
+5, Unknown Beats,0.8
+6,Supraventricular ectopic beats ,0.91
+7,ecotic beats,0.98

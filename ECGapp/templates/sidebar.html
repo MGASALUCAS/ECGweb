@@ -1,0 +1,71 @@
+{% load static %}
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="icon-speedometer"></i> Dashboard</a>
+            </li>
+            <!-- Administration Section Start -->
+            <li class="nav-item nav-dropdown">
+             <a class="nav-link nav-dropdown-toggle" href="#">
+                 <i class="nav-icon icon-puzzle"></i>Administration</a>
+           </li>
+           <!-- Administration Section END -->
+
+           <!-- Academic Section START -->
+           <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-puzzle"></i>Patients Management</a>
+            <ul class="nav-dropdown-items">
+
+              <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <i class="fa fa-plus-circle"></i>Add a patient</a>
+            </ul>
+          </li>
+          <!-- Academic Section END -->
+
+           <!-- Teacher Section START -->
+           <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-puzzle"></i>Doctors</a>
+            <ul class="nav-dropdown-items">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-list"></i>Doctors List</a>
+                </li>
+            </ul>
+          </li>
+          <!-- Teacher Section END -->
+
+
+           <!-- Enroll Student Section START -->
+        <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-puzzle"></i>Generate Report</a>
+            <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-plus-circle"></i>Patient Reports</a>
+
+                </li>
+            </ul>
+          </li>
+          <!-- Enroll Student Section END -->
+
+
+
+        <!-- User-Manual Section START -->
+        <li class="nav-item nav-dropdown">
+         <a class="nav-link" href="#">
+             <i class="nav-icon icon-puzzle"></i>User-Manual</a>
+       </li>
+       <!-- User-Manual Section END -->
+        </ul>
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+
+    {% block sidebar %}
+    {% endblock %}
+</div>
