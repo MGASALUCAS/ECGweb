@@ -1,7 +1,7 @@
 import pandas as pd
 import joblib
 import os
-import sklearn
+import catboost
 import lxml
 from werkzeug.utils import secure_filename
 import matplotlib.pyplot as plt
@@ -9,8 +9,8 @@ plt.switch_backend('agg')
 from flask import send_file
 from matplotlib.ticker import (AutoMinorLocator, MultipleLocator)
 
-beats = {0: "ecotic beats", 1: "Supraventricular ectopic beats ", 2: "Ventricular ectopic beats",
-         3: "Fusion Beats", 4: " Unknown Beats"}
+
+beats = {0: "Normal", 1: "Abnormal"}
 
 
 def read_Data(csv_location):
@@ -45,7 +45,8 @@ def read_Data(csv_location):
         box.append(name_id)
         picture_name.append(box)
 
-        name = 'D:/User Files/Downloads/ECGwebAPP-master/ECGwebAPP-master/static/graphs/' + name
+        name = 'D:/User Files/Desktop/New folder/DJANGO WORKS/storefront/ECGweb/ECG web1/graphs/' + name
+        # name = 'D:/Data Ml/projects/ECGWEB2/static/graphs/' + name
         fig.savefig(name)
         plt.close()
 
@@ -58,11 +59,11 @@ def read_Model(model_location):
 
 
 def predict(data, model):
-    prediction = model.predict(data.iloc[0:, :186])
-    prob = model.predict_proba(data.iloc[0:, :186])
+    prediction = model.predict(data)
+    prob = model.predict_proba(data)
     probabilities = []
     for proba in prob:
-        probabilities.append(max(proba))
+        probabilities.append(round(max(proba),2))
     output = []
     for value in prediction:
         text = beats.get(value)
@@ -92,3 +93,4 @@ def give_prediction(csv_location, model_location):
                      pictures_name[i]]
         all_data.append(some_data)
     return output, all_data
+
