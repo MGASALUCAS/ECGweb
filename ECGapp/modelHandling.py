@@ -14,9 +14,9 @@ beats = {0: "ecotic beats", 1: "Supraventricular ectopic beats ", 2: "Ventricula
 def read_Data(csv_location):
     data = pd.read_csv(csv_location)
 
-    picture_name=[]
+    picture_name = []
     for i in range(len(data.index)):
-        box=[]
+        box = []
         plt.figure()
         plt.tick_params(
             axis='x',  # changes apply to the x-axis
@@ -26,7 +26,7 @@ def read_Data(csv_location):
             labelbottom=False)
         plt.plot(data.iloc[i, :186])
         name = str(i) + '.png'
-        name_id = 'id : '+str(i)
+        name_id = 'id : ' + str(i)
         box.append(name)
         box.append(name_id)
         picture_name.append(box)
